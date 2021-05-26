@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="GroceryList.css">
+</head>
+<body>
+    <menu class="perfil">
+        <div class="foto">
+            <input type="checkbox" id="check">
+            <label for="check">
+                <div class="line-menu"></div>
+                <div class="line-menu"></div>
+                <div class="line-menu"></div>
+            </label>
+            <img src="" alt="">
+            <div class="foto-link">
+                <a href="http://">Mudar perfil</a>
+                <img src="" alt="">
+            </div>
+        </div>
+        <hr>
+        <ul>
+            <li>Perfil</li>
+            <li>Configuração</li>
+        </ul>
+    </menu>
+
+    <main>
+        <button id="left"></button>
+        <div class="container">
+            <section id="header">
+                <input type="text" id="listTitle" maxlength="25" size="25">
+                <div id="subheader">
+                    <div id="date">Data: <input type="date" id="dateType" min="2021-01-01" max="2022-01-01"> </div>
+                    <div id="local">Local: <input type="text" id="localType"> </div>
+                </div>
+            </section>
+            <ul id="lista">
+                <li class="produtoBox">
+                    <option class="type" value="dairy"></option>
+                    <div class="produto">Produto1</div>
+                    <div class="qntt">
+                        <div class="number">100</div>
+                        <div class="unity"> Kg</div>
+                    </div>
+                </li>
+                <li class="produtoBox">
+                    <option class="type" value="meat"></option>
+                    <div class="produto">Produto2</div>
+                    <div class="qntt">
+                        <div class="number">20</div>
+                        <div class="unity">ml</div>
+                    </div>
+                </li>
+                <li class="produtoBox">
+                    <option class="type" value="dairy"></option>
+                    <div class="produto">Produto3</div>
+                    <div class="qntt">
+                        <div class="number">3</div>
+                        <div class="unity">uni.</div>
+                    </div>
+                </li>
+                <li class="produtoBox">
+                    <option class="type" value="fruit"></option>
+                    <div class="produto">Produto4</div>
+                    <div class="qntt">
+                        <div class="number">100</div>
+                        <div class="unity"> Kg</div>
+                    </div>
+                </li>
+                <li class="produtoBox">
+                    <option class="type" value="hort"></option>
+                    <div class="produto">Produto5</div>
+                    <div class="qntt">
+                        <div class="number">20</div>
+                        <div class="unity">ml</div>
+                    </div>
+                </li>
+                <li class="produtoBox">
+                    <option class="type" value="fruit"></option>
+                    <div class="produto">Produto6</div>
+                    <div class="qntt">
+                        <div class="number">3</div>
+                        <div class="unity">uni.</div>
+                    </div>
+                </li>
+            </ul>
+            <div id="btns">
+                <button id="deleteBtn"><img src="https://img.icons8.com/ios-glyphs/30/000000/delete.png"/></button>
+
+                <button id="add"><img src="https://img.icons8.com/ios-glyphs/30/000000/plus-math.png"/></button>
+
+                <button id="notes"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit-property.png"/></button>
+
+                <section id="newProduct">
+                    <h2>New product</h2>
+                    <input type="text" id="newProductName" placeholder="Nome" autocomplete="off" size="20" maxlength="20">
+                    <input type="number" id="newProductQntt" placeholder="Quantidade" min="0">
+
+                    <select id="newProductMeasure">
+                        <option value="void" disabled hidden></option>
+                        <option value="kg">Kg</option>
+                        <option value="g">g</option>
+                        <option value="mg">mg</option>
+                        <option value="l">L</option>
+                        <option value="ml">mL</option>
+                        <option value="uni">uni.</option>
+                    </select>
+
+                    <select id="newProductType">
+                        <option value="void" disabled hidden></option>
+                        <option value="bread">Cereais, pães e tubérculos</option>
+                        <option value="hort">Hortaliças</option>
+                        <option value="fruit">Frutas</option>
+                        <option value="legum">Leguminosas</option>
+                        <option value="meat">Carnes e ovos</option>
+                        <option value="dairy">Laticínios</option>
+                        <option value="oil">Óleos e gordurosas</option>
+                        <option value="sugar">Açúcares</option>
+                        <option value="drinks">Bebidas</option>
+                    </select>
+
+                    <div id="sectionBtns">
+                        <button type="submit" id="done">Pronto</button>
+                        <button type="submit" id="oneMore">Mais</button>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+        <button id="right"></button>
+    </main>
+
+    <aside>
+        <ul id="filter">
+            <li id="bread">
+                <div class="icon"><img src="https://img.icons8.com/ios/50/000000/bread.png"/></div>
+                <div>Cereais,pães e tubérculos</div>
+            </li>
+            <li id="hort">
+                <div class="icon"><img src="https://img.icons8.com/pastel-glyph/64/000000/lettuce-1--v2.png"/></div>
+                <div>Hortaliças</div>
+            </li>
+            <li id="fruit">
+                <div class="icon"><img src="https://img.icons8.com/pastel-glyph/64/000000/apple--v1.png"/></div>
+                <div>Frutas</div>
+            </li>
+            <li id="legum">
+                <div class="icon"><img src="https://img.icons8.com/pastel-glyph/100/000000/big-carrot---v2.png"/></div>
+                <div>Leguminosas</div>
+            </li>
+            <li id="meat">
+                <div class="icon"><img src="https://img.icons8.com/ios/50/000000/thanksgiving.png"/></div>
+                <div>Carnes e ovos</div>
+            </li>
+            <li id="dairy">
+                <div class="icon"><img src="https://img.icons8.com/pastel-glyph/64/000000/cheese.png"/></div>
+                <div>Laticínios</div>
+            </li>
+            <li id="oil">
+                <div class="icon"><img src="https://img.icons8.com/ios/64/000000/olive-oil.png"/></div>
+                <div>Óleos e gordurosas</div>
+            </li>
+            <li id="sugar">
+                <div class="icon"><img src="https://img.icons8.com/ios/50/000000/doughnut.png"/></div>
+                <div>Açúcares</div>
+            </li>
+            <li id="drinks">
+                <div class="icon"><img src="https://img.icons8.com/pastel-glyph/64/000000/alcoholic-cocktail.png"/></div>
+                <div>Bebidas</div>
+            </li>
+        </ul>
+    </aside>
+
+    <script src="GroceryList.js"></script>
+</body>
+</html>
