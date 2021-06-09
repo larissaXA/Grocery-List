@@ -18,28 +18,23 @@ var productType = document.getElementsByClassName('type')
 addBtn.addEventListener('click',addNewProduct)
 doneBtn.addEventListener('click',submitNewProductName)
 deleteBtn.addEventListener('click',appearDeleteBtn)
-//----------------------APAGAR---------------------
-Array.from(arrayProdutoBox).forEach((value) => {
-    value.addEventListener('dblclick',productCheck)
-})
-//----------------------APAGAR---------------------
 oneMoreBtn.addEventListener('click',anotherProduct)
 
 function addNewProduct(){
     newProduct.style.display = 'flex'
-    addBtn.style.backgroundColor = 'transparent'
-    addBtn.style.border = '3px solid palevioletred'
+    document.getElementsByTagName('menu')[0].style.opacity = 0.3
+    document.getElementsByTagName('aside')[0].style.opacity = 0.3
+    document.getElementById('lista').style.opacity
+     = 0.3
+    addBtn.classList.add('onActivity')
 }
 
 var newLi
 function submitNewProductName(){
-    addBtn.style.backgroundColor = 'palevioletred'
-    if(newProductName.value === ""){
-        newProduct.style.display = 'none'
-    }else{
-        newProduct.style.display = 'none'
+    newProduct.style.display = 'none'
+    if(newProductName.value !== ""){
         newLi = document.createElement('li')
-        newLi.className = 'produtoBox'
+        newLi.classList.add('produtoBox')
         var newDivName = document.createElement('div')
         newDivName.className = 'produto'
         newDivName.textContent = newProductName.value
@@ -51,10 +46,16 @@ function submitNewProductName(){
         lista.appendChild(newLi)
         submitNewProductQntt()
         newProductName.value = ''
+        addBtn.classList.remove('onActivity')
         Array.from(arrayProdutoBox).forEach((value) => {
             value.addEventListener('dblclick',productCheck)
         })
     }
+    addBtn.classList.remove('onActivity')
+    document.getElementsByTagName('menu')[0].style.opacity = 1
+    document.getElementsByTagName('aside')[0].style.opacity = 1
+    document.getElementById('lista').style.opacity
+     = 1
 }
 
 function submitNewProductType(){
@@ -77,7 +78,6 @@ function submitNewProductQntt(){
     newUnityDiv.className = 'unity'
     aux.appendChild(newUnityDiv)
     newUnityDiv.textContent = newProductUnity.options[newProductUnity.selectedIndex].text
-
     newProductQntt.value = ""  
 }
 
@@ -99,17 +99,15 @@ function appearDeleteBtn(){
                 lista.removeChild(value.parentNode)
             })
         })
-        deleteBtn.style.backgroundColor = 'transparent'
-        deleteBtn.style.border = '3px solid palevioletred'
+        deleteBtn.classList.add('onActivity')
         appearDisappear = false
     }else{
         Array.from(arrayProdutoBox).forEach((value) => {
             value.style.cursor = 'pointer'
             value.removeChild(value.lastChild)
             value.getElementsByClassName('qntt')[0].style.marginRight = '0'
+            deleteBtn.classList.remove('onActivity')
         })
-        deleteBtn.style.backgroundColor = 'palevioletred'
-        deleteBtn.style.border = '3px solid palevioletred'
         appearDisappear = true
     }
 }
@@ -117,12 +115,18 @@ function appearDeleteBtn(){
 function productCheck(){
     lista.removeChild(this)
     lista.appendChild(this)
+    this.style.backgroundColor = 'lightgray'
+    this.style.borderColor = 'darkgray'
+    this.style.textDecoration = 'line-through'
 }
 
 function anotherProduct(){
     submitNewProductName()
-    addBtn.style.backgroundColor = 'transparent'
-    addBtn.style.border = '3px solid palevioletred'
+    addBtn.classList.add('onActivity')
+    document.getElementsByTagName('menu')[0].style.opacity = 0.3
+    document.getElementsByTagName('aside')[0].style.opacity = 0.3
+    document.getElementById('lista').style.opacity
+     = 0.3
     newProduct.style.display = 'flex'
 }
 
