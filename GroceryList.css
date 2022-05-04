@@ -1,0 +1,442 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+:root{
+    --green-one : #9be564;
+    --green-two : #d7f75b;
+    --brown : #d19c1d;
+}
+button{
+    cursor:pointer;
+}
+body{
+    background-color:rgba(255, 217, 0, 0.2);
+    background-image: linear-gradient(to bottom, rgba(255,217,0,.2) 60%,rgba(255,217,0,.4));
+    height: 100vh;
+    display: flex;
+}
+ul{
+    list-style: none;
+}
+menu{
+    position: relative;
+    background-color:rgba(255,255,255,.3) ;
+    box-shadow: .2rem .2rem .3rem silver;
+    height: 100%;
+    min-width: fit-content;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#check{
+    display: none;
+}
+label{
+    background-color:#ffffff48;
+    padding: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: 20px;
+    right: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+label:hover{
+    cursor: pointer;
+}
+.line-menu{
+    height: 3px;
+    width: 20px;
+    background-color: transparent;
+    box-shadow: 0;
+}
+menu .foto{
+    height: 30vh;
+    min-width: 13vw;
+    border-top-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    image-rendering: optimizeQuality;
+}
+menu .foto > img{
+    height: 9vw;
+    width: 9vw;
+    border-radius: 100%;
+    image-rendering:optimizeQuality;
+}
+menu .foto a{
+    font-size: 80%;
+    text-decoration: none;
+    color: slategrey;
+}
+menu .foto a:hover{
+    text-decoration: underline;
+}
+menu hr{
+    width: 100%;
+}
+menu ul{
+    height: calc(100% - 30vh);
+    width: 100%;
+}
+menu ul li{
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+menu ul li:hover{
+    transition: .1s linear;
+    cursor: pointer;
+    background-color:rgba(255,255,255,.4);   
+    letter-spacing: 1px;
+}
+menu ul li:hover::before{
+    content: '.';
+    font-weight: bolder;
+    font-size: xx-large;
+    position: absolute;
+    left: 5%;
+    top: -13px;
+}
+menu ul li:hover::after{
+    content: '.';
+    font-weight: bolder;
+    font-size: xx-large;
+    position: absolute;
+    right: 5%;
+    top: -13px;
+}
+
+main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+}
+main > button{
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    color: gold;
+    font-size: 600%;
+    font-weight: 700;
+}
+main > button:hover{
+    transition: .1s linear;
+    color: orange;
+}
+.container{
+    background-color:darkcyan ;
+    height: 90%;
+    width: 35vw;
+    padding:15px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#header{
+    color: white;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#header input{
+    color: white;
+}
+#listTitle{
+    height:fit-content;
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+#listTitle:focus{
+    outline: none;
+    border-bottom: 1px solid white;
+}
+#subheader{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#date{
+    font-size: small;
+    display: inline-block;
+    width: fit-content;
+}
+#local{
+    font-size: small;
+    display: inline-block;
+    width: 55%;
+    position: relative;
+    right: 0;
+}
+#dateType{
+    font-size: small;
+    background-color: transparent;
+    border: none;
+}
+#dateType:focus{
+    border: none;
+    outline: none;
+}
+#localType{
+    font-size: small;
+    display: inline-block;
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
+}
+#localType:focus{
+    outline: none;
+    border-bottom: 1px solid white;
+    transition: border .05s linear;
+}
+ul#lista{
+    background-color: ivory;
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.produtoBox{
+    position: relative;
+    transition: all .15s linear;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 0 3%;
+    box-shadow: 0 1px 2px silver;
+    height: 7vh;
+    border-left: 10px solid rgba(255, 215, 0,.5) ;
+}
+.produtoBox:hover{
+    cursor: pointer;
+    transition: all .15s linear;
+    height: calc(7vh + 1%);
+    border-left: 15px solid rgb(255, 215, 0)  ;
+}
+.produtoBox:hover .produto{
+    line-height: calc(7.07vh + 1%);
+    transition: all .15s linear;
+}
+.type{
+    display: none;
+}
+.produto{
+    height: 7vh;
+    width: fit-content;
+    line-height: 7vh;
+}
+.qntt{
+    background-color: transparent;
+    color: darkslategray;
+    height: calc(7vh * 3/5);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.delete{
+    height: calc(7vh * 2/5);
+    margin-right: 4%;
+    position: absolute;
+    right: 0;
+}
+
+
+#btns{
+    margin-top: 15px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#btns button{
+    background-color:white;
+    font-size: large;
+    font-weight: bold;
+    height: fit-content;
+    width: fit-content;
+    border: 3px solid transparent;
+    border-radius: 100%;
+    padding: 2%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+#btns > button:hover,#btns > button.onActivity{
+    border:3px solid orange;
+    background-color: transparent;
+    transition: all .15s ease-in;
+}
+#btns > button img{
+    width: 20px;
+}
+#btns > button:hover img,#btns > button.onActivity img{
+    filter: invert(100%);
+    transition: all .15s ease-in;
+}
+
+section#newProduct{
+    background-color:gold;
+    height: 50vh;
+    width: 30vw;
+    padding: 1.5% 1%;
+    display: block;
+    position: absolute;
+    top: calc(50% - 25vh);
+    left: calc(50% - 15vw);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    justify-content:space-between;
+}
+section#newProduct h2{
+    font-size: 130%;
+    word-spacing: 5px;
+    text-decoration: underline;
+}
+section#newProduct input{
+    display: block;
+    border: none;
+    outline: none;
+    height: 10%;
+    padding: 0 5px;
+}
+section#newProduct input::placeholder{
+    color: dimgray;
+}
+section#newProduct input:focus{
+    background-color: transparent;
+    border-bottom: .1rem solid white;
+    transition: .3s;
+}
+section#newProduct select{
+    display: block;
+    border: none;
+    outline: none;
+    height: 10%;
+    background-color:white ;
+    padding: 0 5px;
+}
+#sectionBtns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#sectionBtns button{
+    background-color: orange;
+    color: black;
+    border-radius: 10px;
+    padding: 1%;
+}
+#sectionBtns button:hover{
+    border: 3px solid orange;
+    padding: 1% 3%;
+    background-color: transparent;
+    transition: .1s;
+}
+section#newProduct{
+    display: none;
+}
+
+aside{
+    background-color:darkcyan;
+    width: 4vw;
+    height: 100%;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+aside ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+aside ul li{
+    background-color: inherit;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+aside ul li:hover{
+    cursor: pointer;
+}
+aside ul li:hover .icon + div{
+    display: block;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon img{
+    width: 65%;
+    transform: rotateZ(45deg);
+}
+#bread .icon img{
+    transform: rotateZ(0);
+}
+#meat .icon img{
+    transform: rotateZ(-25deg);
+}
+#sugar .icon img{
+    transform: rotateZ(-45deg);
+}
+#milk{
+    padding-right: 10%;
+}
+#milk .icon img{
+    transform: rotateZ(-30deg);
+}
+ul li:hover .icon{
+    filter: invert(100%);
+}
+.icon + div{
+    background-color:gold;
+    color: black;
+    display: none;
+    position: absolute;
+    width: 14vw;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 20%;
+    right: 3.3vw;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
