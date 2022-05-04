@@ -244,7 +244,7 @@ ul#lista{
     border-left: 15px solid rgb(255, 215, 0)  ;
 }
 .produtoBox:hover .produto{
-    line-height: calc(7.07vh + 1%);
+    /* line-height: calc(7.07vh + 1%); */
     transition: all .15s linear;
 }
 .type{
